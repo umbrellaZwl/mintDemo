@@ -2,9 +2,12 @@ import Vue from 'vue'
 import MintUI from 'mint-ui'
 import './assets/font/iconfont.css';
 import 'mint-ui/lib/style.css'
+import './less/index.less'
+import './css/index.css'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import routes from './route'
+
 
 Vue.use(MintUI)
 Vue.use(VueRouter)

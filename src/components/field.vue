@@ -1,5 +1,5 @@
 <template>
-  <div class="page-field">
+  <div class="page page-field">
     <mt-header :title="title">
       <router-link to="/home" slot="left">
         <mt-button icon="back">返回</mt-button>

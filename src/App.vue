@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style>
 * {
   margin: 0; padding: 0;
 }
@@ -27,11 +27,11 @@ html, body {
   height: 100%;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: all .5s ease-out;
+.fade-enter-active {
+  transition: all .5s;
 }
-.fade-enter, .fade-leave-active, .fade-leave {
-  /* opacity: 0; */
+.fade-enter {
+  opacity: 0;
   transform: translate3d(320px, 0, 0);
 }
 
@@ -48,6 +48,14 @@ html, body {
   background-color: #fafafa;
 }
 
+.page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
 h1, h2 {
   font-weight: normal;
 }
@@ -55,11 +63,6 @@ h1, h2 {
 ul {
   list-style-type: none;
   padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
 }
 
 a {

@@ -41,6 +41,10 @@ module.exports = {
         loader: 'style-loader!css-loader'
       },
       {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader!less-loader'
+      },
+      {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader'
       },
@@ -83,7 +87,7 @@ module.exports = {
         }
       }
     })
-  ]
+  ] 
 }
 
 if (process.env.NODE_ENV === 'production') {

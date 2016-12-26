@@ -1,6 +1,10 @@
 <template>
-  <div class="page-home">
+  <div class="page page-home">
+    <panel :show-panel="isShowPanel" @closePanel="closePanel"></panel>
     <mt-header :title="title">
+      <mt-button slot="left" @click.native="showPanel">
+        <img src="../assets/img/expand.png" alt="" height="20" width="20" slot="icon">
+      </mt-button>
       <mt-button icon="more" slot="right"></mt-button>
     </mt-header>
     <div class="page-content tabbar-abs" ref="homeC">
@@ -36,8 +40,9 @@
 
 <script>
 import Vue from 'vue'
-import DemoList from './Demolist.vue'
+import DemoList from './demolist.vue'
 import { groups } from '../route.js'
+
 
 let iScrollTop = 0;
 
@@ -46,7 +51,8 @@ let home = {
   data () {
     return {
       selected: '交互',
-      groups: groups
+      groups: groups,
+      isShowPanel: false
     }
   },
   computed: {
@@ -55,9 +61,11 @@ let home = {
     }
   },
   components: {
-    DemoList
+    DemoList,
+    panel: require('./panel.vue')
   },
   mounted() {
+    
   },
   updated() {
   },
@@ -79,6 +87,12 @@ let home = {
   methods: {
     goBack() {
       this.$router.back()
+    },
+    showPanel() {
+      this.isShowPanel = !this.isShowPanel;
+    },
+    closePanel() {
+      this.isShowPanel = !this.isShowPanel;
     }
   }
 }
@@ -87,6 +101,7 @@ export default home
 </script>
 
 <style lang="less">
+
 .page-content {
   flex: 1;
   box-sizing: border-box;
@@ -94,14 +109,8 @@ export default home
   width: 100%;
   left: 0;
   top: 40px;
-  bottom: 55px;
+  bottom: 0px;
   overflow: auto;
   background-color: #fafafa;
-   &.tabbar-abs {
-    padding-bottom: 0px;
-  }
-   &.header-abs {
-    padding-top: 40px;
-  }
 }
 </style>
