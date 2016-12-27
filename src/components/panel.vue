@@ -1,6 +1,6 @@
 <template>
   <div class="panel">
-    <div class="panel-mask" :class="{'show': isShow}" @click="closePanel"></div>
+    <div class="panel-mask" :class="{'show': isShow}" @click="send"></div>
     <div class="panel-wp" :class="{'show': isShow}">
       <ul class="nav-list">
         <li class="nav-item">
@@ -57,7 +57,9 @@
       padding-top: 20px;
       transform: translate3D(-200px, 0, 0);
       transition: all .5s;
+      opacity: 0;
       &.show {
+        opacity: 1;
         transform: translate3D(0, 0, 0);
       }
       .nav-item + .nav-item {
@@ -79,6 +81,8 @@
   }
 </style>
 <script>
+import Vue from 'vue'
+import { EventHub } from '../event.js'
 
 export default {
   data(){
@@ -99,6 +103,9 @@ export default {
   methods: {
     closePanel() {
       this.$emit('closePanel')
+    },
+    send() {
+      EventHub.$emit('child-e')
     }
   }
 }

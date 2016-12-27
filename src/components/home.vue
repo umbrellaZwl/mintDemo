@@ -42,7 +42,7 @@
 import Vue from 'vue'
 import DemoList from './demolist.vue'
 import { groups } from '../route.js'
-
+import { EventHub } from '../event.js'
 
 let iScrollTop = 0;
 
@@ -65,7 +65,9 @@ let home = {
     panel: require('./panel.vue')
   },
   mounted() {
-    
+    EventHub.$on('child-e',(() => {
+      this.isShowPanel = false;
+    }).bind(this))
   },
   updated() {
   },

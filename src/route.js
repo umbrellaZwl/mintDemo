@@ -67,13 +67,13 @@ route.route.push({
 
 route.route.push({
   name: 'Home',
-  path: '/home',
+  path: '/',
   component: require('./components/home.vue')
 })
 
 route.route.push({
   path: '*',
-  redirect: '/home'
+  redirect: '/'
 })
 
 export const groups = NavConfig

@@ -12,7 +12,22 @@ export default {
   name: 'app',
   data () {
     return {
-      transitionName: 'fade'
+      transitionName: 'slide-right'
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      let toArr = to.path.split('/')
+      let toLen = (toArr.filter((item)=>{
+        return item !== '';
+      })).length;
+
+      let fromArr = from.path.split('/')
+      let fromLen = (fromArr.filter((item)=>{
+        return item !== '';
+      })).length;
+      
+      this.transitionName = toLen < fromLen ? 'slide-left' : 'slide-right';
     }
   }
 }
@@ -27,12 +42,18 @@ html, body {
   height: 100%;
 }
 
-.fade-enter-active {
-  transition: all .5s;
+.slide-left-enter-active {
+  transition: all .6s ease-out;
 }
-.fade-enter {
-  opacity: 0;
+.slide-left-enter {
   transform: translate3d(320px, 0, 0);
+}
+
+.slide-right-enter-active {
+  transition: all .6s ease-out;
+}
+.slide-right-enter {
+  transform: translate3d(-320px, 0, 0);
 }
 
 #app {
