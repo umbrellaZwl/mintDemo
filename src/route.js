@@ -1,21 +1,8 @@
 import NavConfig from './nav.config.json'
 
-const regRoutes = (config) => {
-  let route = []
-  config.map(nav => {
-    nav.list.map(page => {
-      route.push({
-        name: page.name,
-        path: page.path,
-        component: require(`./components${page.path}.vue`)
-      })
-    })
-  })
-
-  return { route, navs: config }
+let route = {
+  route: []
 }
-
-let route = regRoutes(NavConfig.splice(0,0))
 
 route.route.push({
   name: 'Toast',
@@ -69,6 +56,12 @@ route.route.push({
   name: 'Home',
   path: '/',
   component: require('./components/home.vue')
+})
+
+route.route.push({
+  name: 'User',
+  path: '/user',
+  component: require('./pages/user.vue')
 })
 
 route.route.push({

@@ -2,6 +2,7 @@
   <div class="panel">
     <div class="panel-mask" :class="{'show': isShow}" @click="send"></div>
     <div class="panel-wp" :class="{'show': isShow}">
+      <user-info></user-info>
       <ul class="nav-list">
         <li class="nav-item">
           <router-link to="/toast"><i class="indexicon icon-toast"></i>toast</router-link>
@@ -83,6 +84,7 @@
 <script>
 import Vue from 'vue'
 import { EventHub } from '../event.js'
+import userInfo from './userInfo.vue'
 
 export default {
   data(){
@@ -107,6 +109,9 @@ export default {
     send() {
       EventHub.$emit('child-e')
     }
+  },
+  components: {
+    userInfo
   }
 }
 </script>

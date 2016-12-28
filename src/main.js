@@ -7,6 +7,7 @@ import './css/index.css'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import routes from './route'
+import store from './store/index.js'
 
 
 Vue.use(MintUI)
@@ -18,6 +19,7 @@ const router = new VueRouter({
 
 new Vue({
   el: '#app',
+  store,
   render: h => h(App),
   router
 })
