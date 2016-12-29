@@ -15,6 +15,9 @@ export default {
       transitionName: 'slide-right'
     }
   },
+  mounted() {
+    this.$store.dispatch('getUserList')
+  },
   watch: {
     '$route' (to, from) {
       let toArr = to.path.split('/')
@@ -37,6 +40,11 @@ export default {
 * {
   margin: 0; padding: 0;
 }
+
+[v-cloak] {
+  display: none !important;
+}
+
 html, body {
   overflow: hidden;
   height: 100%;

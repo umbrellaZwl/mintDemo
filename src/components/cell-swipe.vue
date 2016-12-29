@@ -29,6 +29,7 @@
     },
 
     created() {
+      console.log(this)
       this.rightButtons = [
         {
           content: 'Mark as Unread',

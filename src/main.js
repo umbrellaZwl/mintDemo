@@ -17,12 +17,14 @@ const router = new VueRouter({
   routes
 })
 
-new Vue({
+let vm = new Vue({
   el: '#app',
   store,
   render: h => h(App),
   router
 })
+
+export default vm
 
 /*let iScrollTop = 0
 router.beforeEach((to, from, next) => {

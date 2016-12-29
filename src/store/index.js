@@ -4,6 +4,7 @@ import * as actions from './actions'
 import * as getters from './getters'
 import * as mutations from './mutations'
 import userInfo from './modules/userInfo.js'
+import loginUserList from './modules/loginUserList.js'
 
 Vue.use(Vuex)
 
@@ -11,6 +12,7 @@ export default new Vuex.Store({
   actions,
   getters,
   modules: {
-    userInfo
+    userInfo,
+    loginUserList
   }
 })

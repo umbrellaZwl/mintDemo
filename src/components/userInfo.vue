@@ -1,6 +1,6 @@
 <template>
   <div class="uinfo-box">
-    <div v-if="!tName">请先登录--></div>
+    <router-link class="uinfo-link" to="/login" v-if="!tName">请先登录--></router-link>
     <router-link class="uinfo-link" to="/user" v-if="tName">{{tName}}</router-link>
   </div>
 </template>

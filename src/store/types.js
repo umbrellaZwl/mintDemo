@@ -1,3 +1,6 @@
 export const GET_USER_INFO = 'uinfo/getUserInfo'
 export const UPDATE_USER_INFO_SUCCESS = 'uinfo/updateUserInfoSuccess'
 export const UPDATE_USER_INFO_FAIL = 'uinfo/updateUserInfoFail'
+export const ADD_USER = 'ulist/addUser'
+export const USERLIST_RECEIVE = 'ulist/getUserList'
+export const UPDATE_PRE_LOGIN_USER = 'ulist/updatePreLoginUser'

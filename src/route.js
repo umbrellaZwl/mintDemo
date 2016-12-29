@@ -65,6 +65,12 @@ route.route.push({
 })
 
 route.route.push({
+  name: 'Login',
+  path: '/login',
+  component: require('./pages/login.vue')
+})
+
+route.route.push({
   path: '*',
   redirect: '/'
 })
