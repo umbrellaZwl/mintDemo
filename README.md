@@ -2,7 +2,7 @@
 # mint-demo
 
 A Vue.js project
-使用vue，vuerouter，mintui仿照mintui官方demo写的一个demo
+使用vue，vue-router，vuex-mintui,写的一个简单demo，
 ## Build Setup
 
 ``` bash
