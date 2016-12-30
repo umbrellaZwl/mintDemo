@@ -47,7 +47,10 @@ export default {
   },
   methods: {
     login() {
-      this.$store.dispatch('login', this.userInfo)
+      this.$store.dispatch('login', this.userInfo).then( (() => {
+        this.$toast('登录成功')
+        this.$router.push('/user')
+      }).bind(this))
     }
   },
   computed: {
