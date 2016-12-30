@@ -13,7 +13,7 @@
         <input type="text" v-model="userInfo.name" ref="name">
         <mt-button type="primary" size="small">密码：</mt-button>
         <input type="password" v-model="userInfo.pwd" ref="pwd">
-        <mt-button type="primary" size="large" @click.native="login" :disabled="!userInfo.name && !userInfo.pwd">登录</mt-button>
+        <mt-button type="primary" size="large" @click.native="login">登录</mt-button>
       </div>
     </div>
   </div>

@@ -7,25 +7,40 @@ let route = {
 route.route.push({
   name: 'Toast',
   path: '/toast',
-  component: require('./components/toast.vue')
+  //component: require('./components/toast.vue')
+  /*component: resolve => {
+    require.ensure(['./components/toast.vue'], () => {
+      resolve(require('./components/toast.vue'))
+    })
+  }*/
+  component: function(resolve) { 
+    require(['./components/toast.vue'], resolve)
+  }
 })
 
 route.route.push({
   name: 'Indicator',
   path: '/indicator',
-  component: require('./components/indicator.vue')
+  // component: require('./components/indicator.vue')
+  component: resolve => System.import('./components/indicator.vue')
 })
 
 route.route.push({
   name: 'Pull down',
   path: '/pull-down',
-  component: require('./components/pull-down.vue')
+  // component: require('./components/pull-down.vue')
+  component: resolve => require(['./components/pull-down.vue'], resolve).default
 })
 
 route.route.push({
   name: 'Progress',
   path: '/progress',
-  component: require('./components/progress.vue')
+  // component: require('./components/progress.vue')
+  component: resolve => {
+    require.ensure(['./components/progress.vue'], () => {
+      resolve(require('./components/progress.vue'))
+    })
+  }
 })
 
 route.route.push({

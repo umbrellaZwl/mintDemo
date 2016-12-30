@@ -18,6 +18,9 @@
   </div>
 </template>
 <style lang="less">
+button {
+  margin-top: 20px;
+}
 </style>
 <script>
 import {Indicator} from 'mint-ui'
