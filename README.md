@@ -2,7 +2,7 @@
 # mint-demo
 
 A Vue.js project
-使用vue，vue-router，vuex-mintui,写的一个简单demo，
+使用vue，vue-router，vuex-mintui,写的一个简单demo，在webpack中使用browser-sync
 ## Build Setup
 
 ``` bash
